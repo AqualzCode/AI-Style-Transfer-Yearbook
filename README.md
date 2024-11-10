@@ -1,1 +1,1 @@
-Hi guys! This is an AI photo transferer that you can use to apply styles to your photos! 
+A web application that applies artistic styles to your photos using TensorFlow.js and machine learning. Simply upload your photo, choose a style (cartoon, Van Gogh, pop art, or anime), and download your transformed image - no additional setup required!
