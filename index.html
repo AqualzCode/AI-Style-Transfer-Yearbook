@@ -239,7 +239,7 @@
             }
         }
 
-        // Enable/Disable interface elements
+        // enable/disable
         function enableInterface() {
             document.querySelectorAll('.style-option').forEach(el => {
                 el.classList.remove('disabled');
@@ -254,7 +254,7 @@
             document.querySelector('button').disabled = true;
         }
 
-        // Show error message
+        // show error message
         function showError(message) {
             const errorDiv = document.getElementById('errorMessage');
             errorDiv.textContent = message;
@@ -264,7 +264,7 @@
             }, 5000);
         }
 
-        // Reload model
+        // reload model
         async function reloadModel() {
             document.getElementById('loading').style.display = 'block';
             disableInterface();
@@ -280,7 +280,6 @@
             document.getElementById('loading').style.display = 'none';
         }
 
-        // Handle image upload
         document.getElementById('imageInput').addEventListener('change', function(e) {
             const file = e.target.files[0];
             if (file) {
@@ -312,7 +311,6 @@
             }
         });
 
-        // Resize image helper function
         function resizeImage(img, maxWidth, maxHeight) {
             return new Promise((resolve) => {
                 const canvas = document.createElement('canvas');
@@ -344,7 +342,7 @@
             });
         }
 
-        // Display original image
+        // display original image
         function displayOriginalImage(img) {
             const canvas = document.getElementById('originalCanvas');
             const ctx = canvas.getContext('2d');
@@ -358,7 +356,7 @@
             document.getElementById('downloadBtn').style.display = 'none';
         }
 
-        // Apply style transfer
+        // apply style
         async function applyStyle(styleType) {
             if (isProcessing) {
                 showError('Please wait for the current process to complete');
@@ -420,7 +418,7 @@
             }
         }
 
-        // Get style image
+        // get style image
         async function getStyleImage(styleType) {
             const img = new Image();
             return new Promise((resolve, reject) => {
@@ -453,7 +451,7 @@
             });
         }
 
-        // Download styled image
+        // download styled image
         function downloadStyledImage() {
             const canvas = document.getElementById('styledCanvas');
             const link = document.createElement('a');
@@ -461,8 +459,7 @@
             link.href = canvas.toDataURL();
             link.click();
         }
-
-        // Initialize when page loads
+       
         window.onload = async function() {
             document.getElementById('loading').style.display = 'block';
             await loadModel();
